@@ -1,6 +1,8 @@
 package com.example.intranetbackend.controller;
 
+import com.example.intranetbackend.domain.User;
 import com.example.intranetbackend.dto.UserRequest;
+import com.example.intranetbackend.dto.UserResponse;
 import com.example.intranetbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,8 @@ public class UserRestController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> setUser(@RequestBody UserRequest userRequest) {
-        return ResponseEntity.ok().body(userService.setUser(userRequest));
+    public User setUser(@RequestBody UserRequest userRequest) {
+        return userService.setUser(userRequest);
     }
 
 }
