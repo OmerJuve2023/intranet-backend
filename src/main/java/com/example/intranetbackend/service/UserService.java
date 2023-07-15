@@ -22,9 +22,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    @Transactional(rollbackFor = {
-            Exception.class,
-            RuntimeException.class})
+    /* @Transactional(rollbackFor = {
+             Exception.class,
+             RuntimeException.class})*/
     public User setUser(UserRequest userRequest) {
         final User user = User.builder()
                 .fecha(LocalDate.now())
