@@ -4,16 +4,14 @@ import com.example.intranetbackend.dto.UserResponse;
 import com.example.intranetbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @CrossOrigin(origins = "*",
         maxAge = 3600)
-@Controller
-@RequestMapping(name = "/users")
+@RestController
+@RequestMapping("/api/user")
 public class UserController {
     private final UserService userService;
 
@@ -22,7 +20,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/get")
+    @GetMapping("/findAll")
     public List<UserResponse> getUser() {
         return userService.getUsers();
     }
