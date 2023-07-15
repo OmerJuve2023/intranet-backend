@@ -3,6 +3,7 @@ package com.example.intranetbackend.controller;
 import com.example.intranetbackend.domain.User;
 import com.example.intranetbackend.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
