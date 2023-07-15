@@ -1,8 +1,10 @@
 package com.example.intranetbackend.controller;
 
+import com.example.intranetbackend.dto.UserRequest;
 import com.example.intranetbackend.dto.UserResponse;
 import com.example.intranetbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +25,10 @@ public class UserController {
     @GetMapping("/findAll")
     public List<UserResponse> getUser() {
         return userService.getUsers();
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<?> setUser(@RequestBody UserRequest userRequest) {
+        return ResponseEntity.ok().body(userService.setUser(userRequest));
     }
 }
