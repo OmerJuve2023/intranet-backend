@@ -25,3 +25,6 @@ spring:
 #
 #server:
 #  port: 3015
+logging:
+  level:
+    org.springframework: INFO
