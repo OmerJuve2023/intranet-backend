@@ -1,34 +1,26 @@
 package com.example.intranetbackend.controller;
 
 import com.example.intranetbackend.domain.User;
-import com.example.intranetbackend.dto.UserRequest;
-import com.example.intranetbackend.dto.UserResponse;
-import com.example.intranetbackend.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import com.example.intranetbackend.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-@CrossOrigin(origins = "*",
-        maxAge = 3600)
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
-    private final UserService userService;
+    private final UserRepository userRepository;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    @GetMapping("/findAll")
-    public List<UserResponse> getUser() {
-        return userService.getUsers();
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
-    @PostMapping("/addone")
-    public User setUser(@RequestBody UserRequest userRequest) {
-        return userService.setUser(userRequest);
+
+    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return userRepository.save(user);
     }
 }

@@ -12,20 +12,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+/*@Service*/
 public class UserService {
 
-    private final UserRepository userRepository;
+   /* private final UserRepository userRepository;
 
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
+*/
     /* @Transactional(rollbackFor = {
              Exception.class,
              RuntimeException.class})*/
-    public User setUser(UserRequest userRequest) {
+  /*  public User setUser(UserRequest userRequest) {
         final User user = new User(0L, userRequest.getUsername(), userRequest.getPassword(), LocalDate.now());
         return userRepository.save(user);
     }
@@ -42,5 +42,5 @@ public class UserService {
             userResponses.add(userResponse);
         }
         return userResponses;
-    }
+    }*/
 }
