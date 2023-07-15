@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "*",
         maxAge = 3600)
 @Controller
-@RequestMapping(name = "intranet-unjfsc/get")
+@RequestMapping(name = "/intranet-unjfsc/get")
 public class UserController {
     private final UserService userService;
 

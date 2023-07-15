@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*",
         maxAge = 3600)
 @RestController
-@RequestMapping(name = "intranet-unjfsc/add")
+@RequestMapping(name = "/intranet-unjfsc/add")
 public class UserRestController {
     private final UserService userService;
 
