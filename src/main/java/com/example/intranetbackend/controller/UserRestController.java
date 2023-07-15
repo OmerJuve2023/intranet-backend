@@ -20,8 +20,7 @@ public class UserRestController {
 
     @PostMapping("/add")
     public ResponseEntity<?> setUser(@RequestBody UserRequest userRequest) {
-        userService.setUser(userRequest);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(userService.setUser(userRequest));
     }
 
 }

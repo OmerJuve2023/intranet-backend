@@ -24,13 +24,13 @@ public class UserService {
     @Transactional(rollbackFor = {
             Exception.class,
             RuntimeException.class})
-    public void setUser(UserRequest userRequest) {
+    public User setUser(UserRequest userRequest) {
         final User user = User.builder()
                 .fecha(LocalDate.now())
                 .password(userRequest.getPassword())
                 .username(userRequest.getUsername())
                 .build();
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
     @Transactional(rollbackFor = {
