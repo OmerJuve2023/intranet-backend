@@ -26,11 +26,7 @@ public class UserService {
              Exception.class,
              RuntimeException.class})*/
     public User setUser(UserRequest userRequest) {
-        final User user = User.builder()
-                .fecha(LocalDate.now())
-                .password(userRequest.getPassword())
-                .username(userRequest.getUsername())
-                .build();
+        final User user = new User(0L, userRequest.getUsername(), userRequest.getPassword(), LocalDate.now());
         return userRepository.save(user);
     }
 

@@ -7,8 +7,8 @@ import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
+@Getter
+@Setter
 public class UserRequest {
     private String username;
     private String password;
