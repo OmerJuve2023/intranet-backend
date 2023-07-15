@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,6 +39,12 @@ public class UserService {
             RuntimeException.class},
             readOnly = true)
     public List<UserResponse> getUsers() {
-        return userRepository.findUsernameAndPasswordAndFecha();
+        List<User> users = userRepository.findAll();
+        List<UserResponse> userResponses = new ArrayList<>();
+        for (User user : users) {
+            UserResponse userResponse = new UserResponse(user.getUsername(), user.getPassword(), user.getFecha());
+            userResponses.add(userResponse);
+        }
+        return userResponses;
     }
 }

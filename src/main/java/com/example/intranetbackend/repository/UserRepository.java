@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query("SELECT new com.example.intranetbackend.dto.UserResponse(u.username,u.password,u.fecha) from User u")
-    List<UserResponse> findUsernameAndPasswordAndFecha();
+   /* @Query("SELECT new com.example.intranetbackend.dto.UserResponse(u.username,u.password,u.fecha) from User u")
+    List<UserResponse> findUsernameAndPasswordAndFecha();*/
 }

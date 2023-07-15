@@ -27,8 +27,4 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<?> setUser(@RequestBody UserRequest userRequest) {
-        return ResponseEntity.ok().body(userService.setUser(userRequest));
-    }
 }
