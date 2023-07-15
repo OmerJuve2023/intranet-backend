@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/*@CrossOrigin(origins = "*",
+@CrossOrigin(origins = "*",
         maxAge = 3600)
 @RestController
-@RequestMapping(name = "/user")*/
+@RequestMapping(name = "/users")
 public class UserRestController {
-/*    private final UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserRestController(UserService userService) {
@@ -22,6 +22,6 @@ public class UserRestController {
     public ResponseEntity<?> setUser(@RequestBody UserRequest userRequest) {
         userService.setUser(userRequest);
         return ResponseEntity.ok().build();
-    }*/
+    }
 
 }
