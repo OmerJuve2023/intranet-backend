@@ -1,5 +1,6 @@
 package com.example.intranetbackend.controller;
 
+import com.example.intranetbackend.domain.User;
 import com.example.intranetbackend.dto.UserRequest;
 import com.example.intranetbackend.dto.UserResponse;
 import com.example.intranetbackend.service.UserService;
@@ -26,5 +27,8 @@ public class UserController {
     public List<UserResponse> getUser() {
         return userService.getUsers();
     }
-
+    @PostMapping("/addone")
+    public User setUser(@RequestBody UserRequest userRequest) {
+        return userService.setUser(userRequest);
+    }
 }
