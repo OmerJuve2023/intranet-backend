@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/*@CrossOrigin(origins = "*",
+@CrossOrigin(origins = "*",
         maxAge = 3600)
 @Controller
-@RequestMapping(name = "/user")*/
+@RequestMapping(name = "/user")
 public class UserController {
-   /* private final UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
@@ -25,5 +25,5 @@ public class UserController {
     @PostMapping("/get")
     public List<UserResponse> getUser() {
         return userService.getUsers();
-    }*/
+    }
 }
