@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "*",
         maxAge = 3600)
 @Controller
-@RequestMapping(name = "/intranet-unjfsc/get")
+@RequestMapping(name = "/user")
 public class UserController {
     private final UserService userService;
 
@@ -22,7 +22,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/user")
+    @PostMapping("/get")
     public List<UserResponse> getUser() {
         return userService.getUsers();
     }
