@@ -2,6 +2,7 @@ package com.example.intranetbackend.controller;
 
 import com.example.intranetbackend.domain.User;
 import com.example.intranetbackend.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class UserController {
     private final UserRepository userRepository;
 
+    @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
