@@ -5,11 +5,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/*@Configuration
-@EnableWebMvc*/
+@Configuration
+@EnableWebMvc
 public class CorsConfig implements WebMvcConfigurer {
 
-    /*@Override
+    @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/users/**")
                 .allowedOrigins("*")
@@ -17,5 +17,5 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true)
                 .maxAge(36000);
-    }*/
+    }
 }
