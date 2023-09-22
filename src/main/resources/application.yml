@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
-    username: ${PROD_DB_USERNAME}
-    password: ${PROD_DB_PASSWORD}
-#    driver-class-name: org.postgresql.Driver
-#    password: peru2020
-#    username: postgres
-#    url: jdbc:postgresql://localhost:5433/test_intranet
+#    url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
+#    username: ${PROD_DB_USERNAME}
+#    password: ${PROD_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    password: Elomerperu2010
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/test_intranet
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
