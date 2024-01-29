@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:4000/db-intranet
+    username: user
+    password: root
+    driver-class-name: org.postgresql.Driver
+

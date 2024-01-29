@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  intranet-backend:
+    container_name: intranet-backend
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: db-intranet
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+    ports:
+      - "4000:4000"
+    expose:
+      - 4000
+    command: -p 4000
