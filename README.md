@@ -4,14 +4,18 @@ Este README proporciona una descripción general de la aplicación Intranet Back
 funcionalidad y configuración.
 
 ## ⚠️ **Nota de Exención de Responsabilidad:**
-Este proyecto se proporciona con la intención de ser una herramienta educativa y para propósitos legítimos. El autor y los colaboradores no se hacen responsables del uso indebido de esta herramienta con fines maliciosos o no éticos.
+
+Este proyecto se proporciona con la intención de ser una herramienta educativa y para propósitos legítimos. El autor y
+los colaboradores no se hacen responsables del uso indebido de esta herramienta con fines maliciosos o no éticos.
 
 **Por favor, ten en cuenta:**
+
 - Utiliza esta herramienta de manera ética y legal.
 - No utilices esta herramienta para acceder, manipular o dañar datos sin permiso.
 - Respeta la privacidad y los derechos de los demás usuarios.
 
-Cualquier uso indebido de esta herramienta va en contra de los principios éticos y legales. El autor y los colaboradores no apoyan ni promueven actividades ilegales o maliciosas.
+Cualquier uso indebido de esta herramienta va en contra de los principios éticos y legales. El autor y los colaboradores
+no apoyan ni promueven actividades ilegales o maliciosas.
 
 ## Tabla de Contenidos
 
@@ -60,6 +64,30 @@ Clonar el repositorio
 git clone https://github.com/OmerJuve2023/intranet-faustino.git
 ```
 
+crear la base de datos
+
+```yaml
+version: '3.8'
+services:
+  intranet-backend:
+    container_name: intranet-backend
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: db-intranet
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+    ports:
+      - "4000:4000"
+    expose:
+      - 4000
+    command: -p 4000
+```
+
+```bash 
+docker-compose up -d
+```
+
 Navegar al directorio del proyecto
 
 ```bash 
@@ -70,6 +98,12 @@ Construir el proyecto Maven
 
 ```bash 
 mvn clean install
+```
+
+Construir la imagen de Docker
+
+```bash
+docker buildx build -t intranet-backend
 ```
 
 ## Configuración
@@ -89,9 +123,9 @@ spring:
 ```
 
 ## Uso
-
 ```bash
-java -jar target/intranet-backend.jar
+docker run -p 8080:8080 intranet-backend
+
 ```
 
 La aplicación se iniciará y estará accesible en http://localhost:8080.
@@ -132,5 +166,5 @@ propiedad `hibernate.ddl-auto: create`.
 
 La aplicación utiliza la configuración de registro predeterminada de Spring Boot. Los niveles de registro para el
 paquete org.springframework están configurados en INFO. Puede personalizar la configuración de registro en el archivo
-application.yml.
+`application.yml`.
 
