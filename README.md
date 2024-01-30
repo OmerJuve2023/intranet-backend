@@ -28,6 +28,7 @@ no apoyan ni promueven actividades ilegales o maliciosas.
 - [Puntos Fin de API](#puntos-fin-de-api)
 - [Configuración de la Base de Datos](#configuración-de-la-base-de-datos)
 - [Registro](#registro)
+- [Ejecutar Pruebas](#ejecutar-pruebas)
 
 ## Visión General
 
@@ -123,6 +124,7 @@ spring:
 ```
 
 ## Uso
+
 ```bash
 docker run -p 8080:8080 intranet-backend
 
@@ -168,3 +170,10 @@ La aplicación utiliza la configuración de registro predeterminada de Spring Bo
 paquete org.springframework están configurados en INFO. Puede personalizar la configuración de registro en el archivo
 `application.yml`.
 
+## Ejecutar Pruebas
+
+Para ejecutar las pruebas, puedes utilizar el siguiente comando:
+
+```bash
+./mvnw test
+```
